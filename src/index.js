@@ -6,17 +6,20 @@ const toDoList = [
   {
     description: 'wash the dishes',
     completed: false,
-    index: null,
+    index: 1,
   },
   {
     description: 'complete To Do list project',
     completed: false,
-    index: null,
+    index: 0,
   },
 ];
 
-Object.keys(toDoList).forEach((item) => {
-  displayList.innerHTML += `
+function showList() {
+  toDoList.sort((a, b) => a.index - b.index);
+
+  Object.keys(toDoList).forEach((item) => {
+    displayList.innerHTML += `
   <div class="task ${toDoList[item].description}">
   <input class="taskstatus" type="checkbox">
   <p class="taskdescription">${toDoList[item].description}</p>
@@ -24,4 +27,6 @@ Object.keys(toDoList).forEach((item) => {
   </div>
   <hr width="100%">
   `;
-});
+  });
+}
+showList();
