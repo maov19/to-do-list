@@ -6,12 +6,12 @@ const toDoList = [
   {
     description: 'wash the dishes',
     completed: false,
-    index: null,
+    index: 0,
   },
   {
     description: 'complete To Do list project',
     completed: false,
-    index: null,
+    index: 1,
   },
 ];
 
