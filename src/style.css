@@ -1,4 +1,4 @@
-body {
-  background-color: bisque;
-  color: blue;
-}
+.test:after {
+  content: '\2807';
+  font-size: 100px;
+  }
