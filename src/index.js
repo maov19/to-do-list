@@ -18,9 +18,10 @@ const toDoList = [
 for (const item in toDoList) {
   displayList.innerHTML += `
     <div class="task ${toDoList[item].description}">
-    <input class="task status" type="checkbox">
-    <p class="task description">${toDoList[item].description}</p>
+    <input class="taskstatus" type="checkbox">
+    <p class="taskdescription">${toDoList[item].description}</p>
     <span class="icon"></span>
     </div>
+    <hr width="100%">
     `
 }
