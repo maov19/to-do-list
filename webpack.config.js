@@ -1,7 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-
 module.exports = {
   mode: 'none',
   entry: './src/index.js',
@@ -12,7 +11,7 @@ module.exports = {
   ],
   devServer: {
     static: './dist',
-  },  
+  },
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
@@ -25,5 +24,5 @@ module.exports = {
         use: ['style-loader', 'css-loader'],
       },
     ],
-  }
+  },
 };

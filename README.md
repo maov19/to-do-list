@@ -7,4 +7,4 @@ completed [bool]. - DONE
 index: [number]. - DONE
 Write a function to iterate over the tasks array and populate an HTML list item element for each task. - DONE
 On page load render the dynamically created list of tasks in the dedicated placeholder. The list should appear in order of the index values for each task. - DONE
-Create a style.css and set rules for the To Do List. CSS must be loaded by Webpack Style/CSS Loader. Your list should be a clone of the part of the minimalist project captured in the video below.
+Create a style.css and set rules for the To Do List. CSS must be loaded by Webpack Style/CSS Loader. Your list should be a clone of the part of the minimalist project captured in the video below. - DONE
