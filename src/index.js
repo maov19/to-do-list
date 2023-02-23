@@ -10,6 +10,7 @@ window.addEventListener('load', () => {
 
     const task = input.value;
 
+    // add new tasks
     if (!task) {
       alert('Please fill out task!');
       return;
@@ -51,6 +52,7 @@ window.addEventListener('load', () => {
 
     input.value = '';
 
+    //edit tasks
     task_edit_el.addEventListener('click', () => {
       if (task_edit_el.innerText.toLowerCase() == 'edit') {
         task_input_el.removeAttribute('readonly');
@@ -60,8 +62,10 @@ window.addEventListener('load', () => {
         task_input_el.setAttribute('readonly', 'readonly');
         task_edit_el.innerText = 'Edit';
       }
-
-    })
+    });
+        // delete tasks
+        task_delete_el.addEventListener('click', () => {
+          list_el.removeChild(task_el);
+        })
   })
-
 })
