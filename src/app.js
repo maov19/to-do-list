@@ -55,3 +55,23 @@ form.addEventListener('submit', (event) => {
   showTasks();
 });
 
+const remove = (index) => {
+  const removeList = taskList.filter((e) => e.index !== index);
+  taskList.length = 0;
+  let i = 1;
+  removeList.forEach((e) => {
+    e.index = i;
+    i++;
+  });
+  taskList.push(...removeList);
+  localStorage.setItem('storedTask', JSON.stringify(taskList));
+  showTasks();
+};
+
+displayTasks.addEventListener('click', (event) => {
+  if (event.target.classList.contains('fa-solid')) {
+    const index = parseInt(event.target.getAttribute('id'), 10);
+    remove(index);
+  }
+});
+
