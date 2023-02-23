@@ -1,42 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To do list</title>
-</head>
-<body>
-    <header id="list_head">
-        <h1 id="title">Today's to-dos</h1>
-        <span class="circlearrows">&#8635;</span>
-    <hr width="100%">
-    <form id="new-task-form">
-        <input 
-            type="text" 
-            placeholder="Add to your list" 
-            id="new-task-input" />
-        <input type="submit"
-            id="new-task-submit"
-            value='Add task' />
-    </form>
-    <hr width="100%">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <title>To Do list</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="to-do">
+        <h2 class="heading">Today's To Do</h2>
+      </div>
+      <div class="iconth">
+        <i class="fa-solid fa-arrows-rotate"></i>
+      </div>
     </header>
-    
-    <main>
-        <section id="task-list">
-            <h2>Tasks</h2>
-            <div id="tasks">
-                <!-- <div class="task">
-                    <div class="content">
-                    </div> 
-                    <div class="actions">
-                        <button class="edit">Edit</button>
-                        <button class="delete">Delete</button>
-                    </div>
-                </div> -->
-            </div>
-        </section>
-    </main>
-    
-</body>
+
+    <form class="input-add" id="form">
+      <div class="input">
+        <input type="text" placeholder="Add to your list..." id="add_task" />
+      </div>
+      <div class="add-to-list">
+        <span class="material-symbols-outlined"> arrow_forward </span>
+      </div>
+    </form>
+
+    <section class="to-do">
+      <div id="task_list"></div>
+      <div class="clear">
+        <button class="delete">Clear all completed</button>
+      </div>
+    </section>
+  </body>
 </html>
