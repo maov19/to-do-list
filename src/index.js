@@ -1,40 +1,67 @@
-import './style.css';
-
-const displayList = document.getElementById('todolist');
-
-const toDoList = [
-  {
-
-  },
-];
-
-function showList() { 
-  Object.keys(toDoList).forEach((item) => {
-    return displayList.innerHTML += `
-    <div class="task ${toDoList[item].description}">
-    <input class="taskstatus" type="checkbox">
-    <p class="taskdescription">${toDoList[item].description}</p>
-    <span class="icon"></span>
-    </div>
-    <hr width="100%">
-    `;
-  });
-}
-
-
-// DONE - Remove all hardcoded items from the tasks array.
-// PENDING - Create a new JavaScript file for the new functionality.
-
-// Implement a function for adding a new task (add a new element to the array).
-  // By default new tasks should have the property completed set to false and the property index set to the value of the new array length (i.e. if you're adding a 5th task to the list, the index of that task should equal to 5).
-  // All changes to the To Do List should be saved in local storage.
-
-// Implement a function for deleting a task (remove an element from the array).
-  // Deleting a task should update all remaining items' indexes, so they represent the current list order and are unique(i.e. if you're deleting the first task index 1 from the list, the index of the next task(2) should set to 1)..
-  // All changes to the To Do List should be saved in local storage.
-
-// Implement a function for editing task descriptions.
+window.addEventListener('load', () => {
+  const form = document.querySelector('#new-task-form');
+  const input = document.querySelector('#new-task-input');
+  const list_el = document.querySelector('#tasks');
 
 
 
+  form.addEventListener ('submit', (e) => {
+    e.preventDefault(); 
 
+    const task = input.value;
+
+    if (!task) {
+      alert('Please fill out task!');
+      return;
+    }
+   
+    const task_el = document.createElement('div');
+    task_el.classList.add('task');
+    
+    const task_content_el = document.createElement('div');
+    task_content_el.classList.add('content');
+
+    task_el.appendChild(task_content_el);
+
+    const task_input_el = document.createElement('input');
+    task_input_el.classList.add('text');
+    task_input_el.type = 'text';
+    task_input_el.value = task;
+    task_input_el.setAttribute('readonly', 'readonly');
+
+    task_content_el.appendChild(task_input_el);
+
+    const task_actions_el = document.createElement('div');
+    task_actions_el.classList.add('actions');
+
+    const task_edit_el = document.createElement('button');
+    task_edit_el.classList.add('edit');
+    task_edit_el.innerHTML = 'Edit';
+
+    const task_delete_el = document.createElement('button');
+    task_delete_el.classList.add('delete');
+    task_delete_el.innerHTML = 'Delete';
+
+    task_actions_el.appendChild(task_edit_el);
+    task_actions_el.appendChild(task_delete_el);
+
+    task_el.appendChild(task_actions_el);
+
+    list_el.appendChild(task_el);
+
+    input.value = '';
+
+    task_edit_el.addEventListener('click', () => {
+      if (task_edit_el.innerText.toLowerCase() == 'edit') {
+        task_input_el.removeAttribute('readonly');
+        task_input_el.focus();
+        task_edit_el.textContent = 'Save';
+      } else {
+        task_input_el.setAttribute('readonly', 'readonly');
+        task_edit_el.innerText = 'Edit';
+      }
+
+    })
+  })
+
+})

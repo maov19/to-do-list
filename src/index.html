@@ -6,17 +6,37 @@
     <title>To do list</title>
 </head>
 <body>
-    <section id="list_head">
-    <h1 id="title">Today's to-dos</h1>
-    <span class="circlearrows">&#8635;</span>
-    </section>
+    <header id="list_head">
+        <h1 id="title">Today's to-dos</h1>
+        <span class="circlearrows">&#8635;</span>
     <hr width="100%">
-    <div id="addtask">
-        <input type="text" placeholder="Add to your list">
-    </div>
+    <form id="new-task-form">
+        <input 
+            type="text" 
+            placeholder="Add to your list" 
+            id="new-task-input" />
+        <input type="submit"
+            id="new-task-submit"
+            value='Add task' />
+    </form>
     <hr width="100%">
-    <div id="todolist"></div>
- <h2 id="clear">Clear all completed</h2>
-
+    </header>
+    
+    <main>
+        <section id="task-list">
+            <h2>Tasks</h2>
+            <div id="tasks">
+                <!-- <div class="task">
+                    <div class="content">
+                    </div> 
+                    <div class="actions">
+                        <button class="edit">Edit</button>
+                        <button class="delete">Delete</button>
+                    </div>
+                </div> -->
+            </div>
+        </section>
+    </main>
+    
 </body>
 </html>
