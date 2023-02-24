@@ -2,17 +2,23 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: './src/index.js',
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: './src/index.html',
-    }),
-  ],
+  mode: 'development',
+  entry: {
+    index: './src/index.js',
+    app: './src/app.js',
+  },
+  devtool: 'inline-source-map',
   devServer: {
     static: './dist',
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: 'To do list',
+      template: './src/index.html',
+    }),
+  ],
   output: {
-    filename: 'main.js',
+    filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),
     clean: true,
   },
@@ -22,6 +28,13 @@ module.exports = {
         test: /\.css$/i,
         use: ['style-loader', 'css-loader'],
       },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
+      },
     ],
+  },
+  optimization: {
+    runtimeChunk: 'single',
   },
 };
