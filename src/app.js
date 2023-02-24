@@ -1,6 +1,9 @@
+import { setStatus, clearDone } from './status';
+
 const displayTasks = document.querySelector('#task_list');
 const form = document.getElementById('form');
 const newTask = document.querySelector('#add_task');
+const deleteBtn = document.querySelector('.delete');
 
 let taskList = [];
 
@@ -8,12 +11,12 @@ function showTasks() {
   displayTasks.innerHTML = '';
   taskList = JSON.parse(localStorage.getItem('storedTask')) || [];
   taskList.forEach((item) => {
-    const comp = item.completed ? 'checked' : '';
+    const isCompleted = item.completed ? 'checked' : '';
     const task = document.createElement('div');
     displayTasks.appendChild(task);
     task.classList.add('task');
     task.innerHTML = `
-    <input type="checkbox" class="check" ${comp} id="check" data-set="${item.index}">
+    <input type="checkbox" class="check" ${isCompleted} id="check" status="${item.index}">
     <input class="edit" type="text" value="${item.description}">
     <div>
     <div id="${item.index}" class="test"></div>
@@ -70,4 +73,10 @@ displayTasks.addEventListener('click', (event) => {
     const index = parseInt(event.target.getAttribute('id'), 10);
     remove(index);
   }
+});
+
+displayTasks.addEventListener('click', setStatus);
+deleteBtn.addEventListener('click', () => {
+  clearDone();
+  showTasks();
 });
