@@ -1,4 +1,4 @@
-import { clearing, clear } from './status';
+import { setStatus, clearDone } from './status';
 
 const displayTasks = document.querySelector('#task_list');
 const form = document.getElementById('form');
@@ -11,12 +11,12 @@ function showTasks() {
   displayTasks.innerHTML = '';
   taskList = JSON.parse(localStorage.getItem('storedTask')) || [];
   taskList.forEach((item) => {
-    const comp = item.completed ? 'checked' : '';
+    const isCompleted = item.completed ? 'checked' : '';
     const task = document.createElement('div');
     displayTasks.appendChild(task);
     task.classList.add('task');
     task.innerHTML = `
-    <input type="checkbox" class="check" ${comp} id="check" data-set="${item.index}">
+    <input type="checkbox" class="check" ${isCompleted} id="check" status="${item.index}">
     <input class="edit" type="text" value="${item.description}">
     <div>
     <div id="${item.index}" class="test"></div>
@@ -75,8 +75,8 @@ displayTasks.addEventListener('click', (event) => {
   }
 });
 
-displayTasks.addEventListener('click', clearing);
+displayTasks.addEventListener('click', setStatus);
 deleteBtn.addEventListener('click', () => {
-  clear();
+  clearDone();
   showTasks();
 });

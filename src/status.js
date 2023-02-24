@@ -1,26 +1,26 @@
 /* eslint-disable import/no-cycle */
 /* eslint-disable no-plusplus */
 
-export const clearing = (e) => {
-  const click = e.target.closest('.check');
+export const setStatus = (event) => {
+  const click = event.target.closest('.check');
   if (!click) return;
 
-  const dataT = parseInt(click.getAttribute('data-set'), 10);
+  const status = parseInt(click.getAttribute('status'), 10);
   const task = JSON.parse(localStorage.getItem('storedTask')) || [];
-  const find = task.find((todo) => todo.index === dataT);
-  find.completed = !find.completed;
+  const findStatus = task.find((todo) => todo.index === status);
+  findStatus.completed = !findStatus.completed;
   localStorage.setItem('storedTask', JSON.stringify(task));
 };
 
-export const clear = () => {
-  const set = JSON.parse(localStorage.getItem('storedTask')) || [];
-  const notDone = set.filter((taskList) => !taskList.completed);
-  set.length = 0;
+export const clearDone = () => {
+  const localTasks = JSON.parse(localStorage.getItem('storedTask')) || [];
+  const toBeDone = localTasks.filter((taskList) => !taskList.completed);
+  localTasks.length = 0;
   let i = 1;
-  notDone.forEach((element) => {
+  toBeDone.forEach((element) => {
     element.index = i;
     i += 1;
   });
-  set.push(...notDone);
-  localStorage.setItem('storedTask', JSON.stringify(set));
+  localTasks.push(...toBeDone);
+  localStorage.setItem('storedTask', JSON.stringify(localTasks));
 };
