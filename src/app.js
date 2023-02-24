@@ -5,7 +5,6 @@ const form = document.getElementById('form');
 const newTask = document.querySelector('#add_task');
 const deleteBtn = document.querySelector('.delete');
 
-
 let taskList = [];
 
 function showTasks() {
@@ -81,5 +80,3 @@ deleteBtn.addEventListener('click', () => {
   clear();
   showTasks();
 });
-
-
