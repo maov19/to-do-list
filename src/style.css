@@ -1,81 +1,98 @@
 body {
-  box-shadow: 0 2px 2px 2px rgba(109, 97, 97, 0.3);
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  margin: 1rem 1rem 1rem 1rem;
+  border: 1px solid  rgba(54, 52, 52, 0.116);
+  margin: 2rem 2rem 2rem 2rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-#list_head {
+header {
+  border: 1px solid  rgba(54, 52, 52, 0.116);
   display: flex;
+  justify-content: space-between;
   align-items: center;
+  gap: 20px;
+  width: 100%;
+  height: 5rem;
 }
 
-#title {
-  width: 85%;
-  font-size: 1rem;
-  padding-top: 1rem;
-  margin: 0 1rem 1rem 1rem;
-  font-weight: bold;
-}
-
-.circlearrows {
-  content: "\21BB";
-  color: black;
-  font-weight: 700;
-}
-
-hr {
-  margin: 0;
-  padding: 0;
-  border: solid rgba(139, 121, 121, 0.137);
-  border-width: 1px;
-}
-
-#addtask {
+.title {
   display: flex;
-  font-size: 1rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  margin: 0 1rem 0 1rem;
+  justify-content: space-between;
+  margin-left: 2rem;
+  font-weight: 400;
+  font-size: 2rem;
 }
 
-input {
+.iconth {
+  margin-right: 2rem;
+}
+
+.input-add input {
+  margin-left: 2rem;
+  width: 100%;
   border: none;
-}
-
-input:focus,
-textarea:focus,
-select:focus {
-  outline: none;
-}
-
-::placeholder {
   font-style: italic;
+  font-size: 1.5rem;
+}
+
+.input-add {
+  border: 1px solid  rgba(54, 52, 52, 0.116);
+  height: 5rem;
+  display: flex;
+  justify-content: start;
+  align-items: center;
 }
 
 .task {
+  border: 1px solid  rgba(54, 52, 52, 0.116);
+  height: 5rem;
+  width: 100%;
   display: flex;
-  align-items: center;
-  align-content: start;
   justify-content: start;
-  margin: 0 1rem 0 0.5rem;
+  align-items: center;
 }
 
-.taskdescription {
-  margin-left: 1rem;
-  width: 90%;
-}
-
-.icon::after {
+.test::after {
+  margin-left: 2rem;
   content: '\2807';
-  font-size: 1rem;
+  font-size: 2rem;
 }
 
-#clear {
-  background-color: rgba(139, 121, 121, 0.219);
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  margin: 0;
-  text-align: center;
-  align-self: center;
-  font-size: 1rem;
+.check {
+  margin: 0 1rem 0 2rem;
+}
+
+.edit {
+  width: 70%;
+  border: none;
+  font-size: 1.5rem;
+  border-radius: 10px;
+}
+
+.to-do button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15%;
+  padding: 15px;
+  border: none;
+  font-size: 18px;
+}
+
+.clear {
+  border: 1px solid  rgba(54, 52, 52, 0.116);
+  background-color: rgba(54, 52, 52, 0.062);
+  height: 5rem;
+  width: 100%;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.clear button {
+  font-size: 1.5rem;
+  width: 100%;
+  height: 5rem;
+  background-color: rgba(54, 52, 52, 0.062);
 }
