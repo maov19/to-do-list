@@ -1,6 +1,10 @@
+import { clearing, clear } from './status';
+
 const displayTasks = document.querySelector('#task_list');
 const form = document.getElementById('form');
 const newTask = document.querySelector('#add_task');
+const deleteBtn = document.querySelector('.delete');
+
 
 let taskList = [];
 
@@ -71,3 +75,11 @@ displayTasks.addEventListener('click', (event) => {
     remove(index);
   }
 });
+
+displayTasks.addEventListener('click', clearing);
+deleteBtn.addEventListener('click', () => {
+  clear();
+  showTasks();
+});
+
+
