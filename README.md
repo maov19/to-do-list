@@ -21,7 +21,6 @@
   - [Install](#install)
   - [Usage](#usage)
   - [Run tests](#run-tests)
-  - [Deployment](#triangular_flag_on_post-deployment)
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
@@ -59,7 +58,9 @@
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+## 💻 Live Demo <a name="live-demo"></a>
+You can check the site [here](https://maov19.github.io/to-do-list/)
+
 
 <!-- GETTING STARTED -->
 
